@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>textFiles/SouvenirList.txt</file>
+        <file>textFiles/stadiumDistances.txt</file>
+        <file>textFiles/stadiumInfo.txt</file>
+    </qresource>
+</RCC>

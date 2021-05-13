@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>logos/dodgersLogo.jpg</file>
+        <file>logos/oldschoolDodgers.png</file>
+        <file>logos/mlbMap.png</file>
+        <file>logos/sportsVacayLogo.png</file>
+        <file>logos/baseballCalculatorLogo.png</file>
+        <file>logos/whiteSoxLogo.jpg</file>
+        <file>logos/washingtonnationalsLogo.jpg</file>
+        <file>logos/torontoBlueJayslogo.jpg</file>
+        <file>logos/texasRangersLogo.jpg</file>
+        <file>logos/tampaBayLogo.jpg</file>
+        <file>logos/stLouisCardinals.jpg</file>
+        <file>logos/seattleMarinersLogo.jpg</file>
+        <file>logos/sanDiegoLogo.jpg</file>
+        <file>logos/PittsPiratesLogo.jpg</file>
+        <file>logos/philliesLogo.jpg</file>
+        <file>logos/oaklandA'sLogo.jpg</file>
+        <file>logos/nyYankeesLogo.jpg</file>
+        <file>logos/nyMetsLogo.jpg</file>
+        <file>logos/minnesotaTwinsLogo.jpg</file>
+        <file>logos/milwaukeeBrwersLogo.jpg</file>
+        <file>logos/miamiMarlinsLogo.jpg</file>
+        <file>logos/LAangelsLogo.jpg</file>
+        <file>logos/kcRoyalsLogo.jpg</file>
+        <file>logos/DodgersMLBLogo.jpg</file>
+        <file>logos/coloradoRockiesLogo.jpg</file>
+        <file>logos/clevelandIndiansLogo.jpg</file>
+        <file>logos/cinciLogo.jpg</file>
+        <file>logos/chicagoCubsLogo.jpg</file>
+        <file>logos/bostonRedSoxLogo.jpg</file>
+        <file>logos/baltimoreOriolesLogo.jpg</file>
+        <file>logos/atlantaBravesLogo.jpg</file>
+        <file>logos/astrosLogo.jpg</file>
+        <file>logos/arizonaDiamondBacksLogo.jpg</file>
+        <file>logos/detroitTigersLogo.jpg</file>
+        <file>logos/souvenirsLogo.jpeg</file>
+        <file>logos/adminLogoo.png</file>
+        <file>logos/mlbLOGO.png</file>
+        <file>logos/planVacayLogo.jpg</file>
+        <file>logos/oaklandALogoNew.png</file>
+        <file>logos/sanFranGiantsLogo.png</file>
+    </qresource>
+</RCC>
