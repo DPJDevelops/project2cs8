@@ -975,6 +975,68 @@ void MainWindow::on_backtoMain_clicked()
 }
 void MainWindow::on_showMapButton_clicked()
 {
+    if(dreamList.size() == 0 || dreamList.size() == 1)
+       {
+           //Nothing to paint
+       }
+       else
+       {
+           int x1, y1, x2, y2;
+           QPixmap pixmap(":/logos/mlbMap.png");
+           QPainter painter(&pixmap);
+           QFont font = painter.font();
+           font.setBold(true);
+           painter.setFont(font);
+   //        painter.setPen(QPen(Qt::blue));
+           painter.setPen(QPen(Qt::blue, 2, Qt::DashDotLine, Qt::RoundCap));
+           //List of Processed Dijkstra's Stadiums
+           node<stadiumNode> *myNode = client.plannedTrips.Begin();
+
+           //Check for lines. If Line already drawn there, return true
+           bool duplicate = false;
+           //counter for lines
+           int count = 1;
+           while(myNode)
+           {
+               node<stadiumNode> *startNode = client.plannedTrips.Begin();
+
+               int srcX = g.getStadiumInfo(myNode->_item._src).getXCoor();
+               int srcY = g.getStadiumInfo(myNode->_item._src).getYCoor();
+               x1 = srcX;
+               y1 = srcY;
+               int desX = g.getStadiumInfo(myNode->_item._des).getXCoor();
+               int desY = g.getStadiumInfo(myNode->_item._des).getYCoor();
+               x2 = desX;
+               y2 = desY;
+               painter.drawLine(x1, y1, x2, y2);
+
+               //Trying to draw a number
+               string counter = to_string(count);
+               QString qCount = QString::fromStdString(counter);
+
+               //Check if not already placed a number there. If so,
+               //have the new number be placed other place.
+               while(startNode != myNode)
+               {
+                   if(startNode->_item._des == myNode->_item._des ||
+                           startNode->_item._src == myNode->_item._des)
+                   {
+                       duplicate = true;
+                   }
+                   startNode = startNode->next;
+               }
+               if(duplicate)
+                   painter.drawText(x2, y2 - 30, qCount);
+
+               else
+                   painter.drawText(x2, y2 - 10, qCount);
+               count++;
+               duplicate = false;
+               myNode = myNode->next;
+           }
+           ui->dreamMap->setPixmap(pixmap);
+       }
+       gotoPage(3);
 
 
 }
@@ -1192,7 +1254,42 @@ void MainWindow::on_AddbuttonTrackSouvenir_clicked()
 
 void MainWindow::on_showMapButtonMainPage_clicked()
 {
+    node<stadium> *w = newStadiumaAddedbyUser.Begin();
 
+        if(w == nullptr)
+        {
+            return;
+            //Nothing to paint
+        }
+        else
+        {
+            int x1, y1;
+            QPixmap pixmap("C:/Users/David/Desktop/examples/Books/Project-2-main/logos/mlbMap.png");
+            QPainter painter(&pixmap);
+            QFont font = painter.font();
+            font.setBold(true);
+            painter.setFont(font);
+    //        painter.setPen(QPen(Qt::blue));
+            painter.setPen(QPen(Qt::blue, 2, Qt::DashDotLine, Qt::RoundCap));
+    //        //List of Processed Dijkstra's Stadiums
+
+            while(w)
+            {
+
+                int srcX = w->_item.getXCoor();
+                int srcY = w->_item.getYCoor();
+                x1 = srcX;
+                y1 = srcY;
+                string name = w->_item.getStadiumName();
+                QString n = QString::fromStdString(name);
+                painter.drawText(x1, y1, n);
+
+                w = w->next;
+            }
+            ui->map2->setPixmap(pixmap);
+
+        }
+        gotoPage(11);
 }
 
 void MainWindow::on_DoneButton2_clicked()
